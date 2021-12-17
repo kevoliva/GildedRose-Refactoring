@@ -35,7 +35,7 @@ class GildedRoseTest extends TestCase
     // Ici, nous supposons que la classe GildedRose est fonctionnelle, nous nous appuyons sur celle-ci pour tester
     // la nouvelle classe que nous créons (GildedRoseRefactor) afin de vérifier si nos résultats sont toujours équivalents à 
     // ceux de GildedRose
-    public function testOneDay(): void
+    public function testTwentyDays(): void
     {
         // Nous créons deux tableaux car si nous faisons une copie du premier, les valeurs seront données par référence,
         // cela nous empêchera de modifier un objet sans modifier l'autre
@@ -64,11 +64,13 @@ class GildedRoseTest extends TestCase
         $gildedRose = new GildedRose($itemsSafes);
         $gildedRoseRefactor = new GildedRoseRefactor($itemsToTest);
 
-        $gildedRose->updateQuality();
-        $gildedRoseRefactor->updateQuality();
-
-        for ($i=0; $i < sizeof($itemsSafes); $i++) { 
-            $this->assertEquals(($gildedRose->getItems())[$i], ($gildedRoseRefactor->getItems())[$i]);
+        for ($j=0; $j < 20; $j++) { 
+            $gildedRose->updateQuality();
+            $gildedRoseRefactor->updateQuality();
+            for ($i=0; $i < sizeof($itemsSafes); $i++) { 
+                $this->assertEquals(($gildedRose->getItems())[$i], ($gildedRoseRefactor->getItems())[$i]);
+            }
         }
+        
     }
 }
