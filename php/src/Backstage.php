@@ -6,7 +6,7 @@ namespace GildedRose;
 
 final class Backstage
 {
-    public static function updateQuality(Item $item)
+    public static function updateQuality(Item $item): void
     {
         if ($item->quality <= 50) {
             if ($item->sell_in < 10) {

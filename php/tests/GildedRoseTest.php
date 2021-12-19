@@ -20,7 +20,7 @@ class GildedRoseTest extends TestCase
     // }
 
     // Ici, nous supposons que la classe GildedRose est fonctionnelle, nous nous appuyons sur celle-ci pour tester
-    // la nouvelle classe que nous créons (GildedRoseRefactor) afin de vérifier si nos résultats sont toujours équivalents à 
+    // la nouvelle classe que nous créons (GildedRoseRefactor) afin de vérifier si nos résultats sont toujours équivalents à
     // ceux de GildedRose
     public function testTwentyDays(): void
     {
@@ -72,7 +72,7 @@ class GildedRoseTest extends TestCase
         }
         $itemAfterUpdate = new Item('Conjured Mana Cake', -3, 0);
         $itemAfterUpdate2 = new Item('Conjured Mana Cake', -2, 33);
-        
+
         $this->assertEquals($items[0], $itemAfterUpdate);
         $this->assertEquals($items[1], $itemAfterUpdate2);
     }
