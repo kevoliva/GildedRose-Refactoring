@@ -60,7 +60,7 @@ class GildedRoseTest extends TestCase
         }
     }
 
-    public function testConjuredTwentyDays(): void
+    public function testConjuredSixDays(): void
     {
         $items = [
             new Item('Conjured Mana Cake', 3, 6),
