@@ -32,6 +32,9 @@ final class GildedRoseRefactor
                 case 'Backstage passes to a TAFKAL80ETC concert':
                     Backstage::updateQuality($item);
                     break;
+                case 'Conjured Mana Cake':
+                    Conjured::updateQuality($item);
+                    break;
                 case 'Sulfuras, Hand of Ragnaros':
                     $item->sell_in++;
                     break;

@@ -51,13 +51,29 @@ class GildedRoseTest extends TestCase
         $gildedRose = new GildedRose($itemsSafes);
         $gildedRoseRefactor = new GildedRoseRefactor($itemsToTest);
 
-        for ($j=0; $j < 20; $j++) { 
+        for ($j = 0; $j < 20; $j++) {
             $gildedRose->updateQuality();
             $gildedRoseRefactor->updateQuality();
-            for ($i=0; $i < sizeof($itemsSafes); $i++) { 
+            for ($i = 0; $i < sizeof($itemsSafes); $i++) {
                 $this->assertEquals(($gildedRose->getItems())[$i], ($gildedRoseRefactor->getItems())[$i]);
             }
         }
+    }
+
+    public function testConjuredTwentyDays(): void
+    {
+        $items = [
+            new Item('Conjured Mana Cake', 3, 6),
+            new Item('Conjured Mana Cake', 4, 49),
+        ];
+        $gildedRoseRefactor = new GildedRoseRefactor($items);
+        for ($j = 0; $j < 6; $j++) {
+            $gildedRoseRefactor->updateQuality();
+        }
+        $itemAfterUpdate = new Item('Conjured Mana Cake', -3, 0);
+        $itemAfterUpdate2 = new Item('Conjured Mana Cake', -2, 33);
         
+        $this->assertEquals($items[0], $itemAfterUpdate);
+        $this->assertEquals($items[1], $itemAfterUpdate2);
     }
 }
