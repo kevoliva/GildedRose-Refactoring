@@ -8,8 +8,6 @@ final class Backstage
 {
     public static function updateQuality(Item $item)
     {
-        $item->sell_in--;
-
         if ($item->quality <= 50) {
             if ($item->sell_in < 10) {
                 if ($item->sell_in < 5) {

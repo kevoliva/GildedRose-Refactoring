@@ -24,6 +24,7 @@ final class GildedRoseRefactor
     public function updateQuality(): void
     {
         foreach ($this->items as $item) {
+            $item->sell_in--;
             switch ($item->name) {
                 case 'Aged Brie':
                     AgedBrie::updateQuality($item);
@@ -32,9 +33,10 @@ final class GildedRoseRefactor
                     Backstage::updateQuality($item);
                     break;
                 case 'Sulfuras, Hand of Ragnaros':
+                    $item->sell_in++;
                     break;
                 default:
-                DefaultItem::updateQuality($item);
+                    DefaultItem::updateQuality($item);
                     break;
             }
         }
