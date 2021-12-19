@@ -11,21 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class GildedRoseTest extends TestCase
 {
-    // public function testFoo(): void
-    // {
-    //     $items = [new Item('foo', 0, 0)];
-    //     $gildedRose = new GildedRose($items);
-    //     $gildedRose->updateQuality();
-    //     $this->assertSame('foo', $items[0]->name);
-    // }
-
-    // Ici, nous supposons que la classe GildedRose est fonctionnelle, nous nous appuyons sur celle-ci pour tester
-    // la nouvelle classe que nous créons (GildedRoseRefactor) afin de vérifier si nos résultats sont toujours équivalents à
-    // ceux de GildedRose
     public function testTwentyDays(): void
     {
-        // Nous créons deux tableaux car si nous faisons une copie du premier, les valeurs seront données par référence,
-        // cela nous empêchera de modifier un objet sans modifier l'autre
         $itemsSafes = [
             new Item('+5 Dexterity Vest', 10, 20),
             new Item('Aged Brie', 2, 0),
